@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://calrt5fkipo5f"]
+
+[node name="Main" type="Node"]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
