@@ -1,4 +1,4 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
-
 *.cs text diff=csharp
+*.svg filter=lfs diff=lfs merge=lfs -text
