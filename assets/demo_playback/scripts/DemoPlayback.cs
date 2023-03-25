@@ -1,6 +1,4 @@
-using CsgoVisualAnalGodot.assets.demo_playback.scripts;
 using Godot;
-using System;
 
 public partial class DemoPlayback : PanelContainer
 {
@@ -56,4 +54,12 @@ public partial class DemoPlayback : PanelContainer
 		_timeCounter.Text = string.Format("Time: {0:d2}:{1:d2} / 00:00", minutes, seconds);
 		_tickCounter.Text = string.Format("Tick: {0:d} / 0", _playback.Tick);
 	}
+
+	private void _on_load_button_button_down()
+	{
+		var demoBrowser = GetNode("../DemoBrowser") as FileDialog;
+		demoBrowser.PopupCentered();
+	}
 }
+
+

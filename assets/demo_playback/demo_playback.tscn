@@ -155,7 +155,7 @@ text = "Tick: 0 / 0"
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="LoadButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 text = "Load..."
 
@@ -166,3 +166,4 @@ text = "Load..."
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/Buttons/Twice" to="MarginContainer/VBoxContainer/HBoxContainer/TimeScale" method="_on_twice_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/Buttons/Quadruple" to="MarginContainer/VBoxContainer/HBoxContainer/TimeScale" method="_on_quadruple_button_down"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/HBoxContainer/Slider" to="MarginContainer/VBoxContainer/HBoxContainer/TimeScale" method="_on_slider_value_changed"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer3/LoadButton" to="." method="_on_load_button_button_down"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bys7s5qmxy763"]
+
+[ext_resource type="Script" path="res://assets/demo_browser/DemoBrowser.cs" id="1_qc36j"]
+
+[node name="DemoBrowser" type="FileDialog"]
+initial_position = 1
+title = "Open a File"
+size = Vector2i(600, 400)
+visible = true
+popup_window = true
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.dem")
+script = ExtResource("1_qc36j")

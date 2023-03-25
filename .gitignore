@@ -1,3 +1,6 @@
+# CSGO demo files
+*.dem
+
 # Godot 4+ specific ignores
 .godot/
 

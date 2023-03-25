@@ -1,6 +1,5 @@
 using CsgoVisualAnalGodot.assets.demo_playback.scripts;
 using Godot;
-using System;
 
 public partial class MediaControlButtons : HBoxContainer
 {

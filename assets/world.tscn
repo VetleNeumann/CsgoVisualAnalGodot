@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq15oxvixxyhv"]
+[gd_scene load_steps=4 format=3 uid="uid://dq15oxvixxyhv"]
 
 [ext_resource type="Script" path="res://assets/scripts/Main.cs" id="1_e3of3"]
 [ext_resource type="PackedScene" uid="uid://dih16pxth6t08" path="res://assets/demo_playback/demo_playback.tscn" id="2_c7x30"]
+[ext_resource type="PackedScene" uid="uid://bys7s5qmxy763" path="res://assets/demo_browser/demo_browser.tscn" id="3_h0tin"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_e3of3")
@@ -17,5 +18,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="DemoPlayback" parent="GUI" instance=ExtResource("2_c7x30")]
-layout_mode = 0
-offset_bottom = 175.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -92.5
+offset_bottom = 92.5
+grow_vertical = 2
+
+[node name="DemoBrowser" parent="GUI" instance=ExtResource("3_h0tin")]
+visible = false

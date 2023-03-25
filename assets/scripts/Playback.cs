@@ -3,7 +3,7 @@ using Godot;
 
 public partial class Playback : Node
 {
-	public PlaybackState State { get; private set; } = PlaybackState.Paused;
+	public PlaybackState State { get; private set; } = PlaybackState.Stopped;
 	public double Seconds { get; private set; } = 0f;
 	public uint Tick { get; private set; } = 0;
 
