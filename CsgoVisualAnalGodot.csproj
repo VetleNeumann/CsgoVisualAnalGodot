@@ -1,6 +1,13 @@
-<Project Sdk="Godot.NET.Sdk/4.0.1">
+﻿<Project Sdk="Godot.NET.Sdk/4.0.1">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="libraries\**" />
+    <EmbeddedResource Remove="libraries\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="libraries\DemoParser\DemoTracker\DemoTracker.csproj" />
+  </ItemGroup>
 </Project>

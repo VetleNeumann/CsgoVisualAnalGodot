@@ -1,0 +1,168 @@
+[gd_scene load_steps=5 format=3 uid="uid://dih16pxth6t08"]
+
+[ext_resource type="Script" path="res://assets/demo_playback/scripts/DemoPlayback.cs" id="1_hno2h"]
+[ext_resource type="Script" path="res://assets/demo_playback/scripts/TimeScale.cs" id="2_6eqfx"]
+[ext_resource type="Script" path="res://assets/demo_playback/scripts/MediaControlButtons.cs" id="2_pvqoh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08q26"]
+bg_color = Color(0.635294, 0.635294, 0.635294, 0.635294)
+
+[node name="DemoPlayback" type="PanelContainer"]
+offset_right = 390.0
+offset_bottom = 185.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_08q26")
+script = ExtResource("1_hno2h")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = " Demo Playback - "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="MediaControlButtons" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("2_pvqoh")
+
+[node name="SkipBackward" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MediaControlButtons"]
+layout_mode = 2
+text = "|<"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MediaControlButtons"]
+layout_mode = 2
+text = "<"
+
+[node name="PlayPauseToggle" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MediaControlButtons"]
+layout_mode = 2
+text = "Play"
+
+[node name="Forward" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MediaControlButtons"]
+layout_mode = 2
+text = ">"
+
+[node name="SkipForward" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MediaControlButtons"]
+layout_mode = 2
+text = ">|"
+
+[node name="TimeCounter" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Time: 00:00 / 00:00"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TimeScale" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("2_6eqfx")
+
+[node name="Buttons" type="BoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/TimeScale"]
+layout_mode = 2
+
+[node name="Quarter" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/Buttons"]
+layout_mode = 2
+text = "1/4x"
+
+[node name="Half" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/Buttons"]
+layout_mode = 2
+text = "1/2x"
+
+[node name="Normal" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/Buttons"]
+layout_mode = 2
+text = "1x"
+
+[node name="Twice" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/Buttons"]
+layout_mode = 2
+text = "2x"
+
+[node name="Quadruple" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/Buttons"]
+layout_mode = 2
+text = "4x"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/TimeScale"]
+layout_mode = 2
+
+[node name="Slider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 400.0
+value = 100.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/HBoxContainer"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Round" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2/Round"]
+layout_mode = 2
+text = "<"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/Round"]
+layout_mode = 2
+text = "Round"
+
+[node name="Forward" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2/Round"]
+layout_mode = 2
+text = ">"
+
+[node name="Death" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2/Death"]
+layout_mode = 2
+text = "<"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/Death"]
+layout_mode = 2
+text = "Death"
+
+[node name="Forward" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2/Death"]
+layout_mode = 2
+text = ">"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TickCounter" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Tick: 0 / 0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Load..."
+
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MediaControlButtons/PlayPauseToggle" to="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MediaControlButtons" method="_on_play_pause_toggle_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/Buttons/Quarter" to="MarginContainer/VBoxContainer/HBoxContainer/TimeScale" method="_on_quarter_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/Buttons/Half" to="MarginContainer/VBoxContainer/HBoxContainer/TimeScale" method="_on_half_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/Buttons/Normal" to="MarginContainer/VBoxContainer/HBoxContainer/TimeScale" method="_on_normal_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/Buttons/Twice" to="MarginContainer/VBoxContainer/HBoxContainer/TimeScale" method="_on_twice_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/Buttons/Quadruple" to="MarginContainer/VBoxContainer/HBoxContainer/TimeScale" method="_on_quadruple_button_down"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer/TimeScale/HBoxContainer/Slider" to="MarginContainer/VBoxContainer/HBoxContainer/TimeScale" method="_on_slider_value_changed"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq15oxvixxyhv"]
+
+[ext_resource type="Script" path="res://assets/scripts/Main.cs" id="1_e3of3"]
+[ext_resource type="PackedScene" uid="uid://dih16pxth6t08" path="res://assets/demo_playback/demo_playback.tscn" id="2_c7x30"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_e3of3")
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DemoPlayback" parent="GUI" instance=ExtResource("2_c7x30")]
+layout_mode = 0
+offset_bottom = 175.0

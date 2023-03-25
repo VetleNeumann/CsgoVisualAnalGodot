@@ -1,0 +1,4 @@
+[submodule "DemoParser"]
+	path = libraries/DemoParser
+	url = https://github.com/CSDemoToolkit/CSGO
+	branch = dev-demo-tracker
