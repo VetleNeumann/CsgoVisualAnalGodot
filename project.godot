@@ -17,8 +17,8 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-Playback="*res://assets/scripts/Playback.cs"
 DemoHandler="*res://assets/scripts/DemoHandler.cs"
+Playback="*res://assets/scripts/Playback.cs"
 
 [dotnet]
 

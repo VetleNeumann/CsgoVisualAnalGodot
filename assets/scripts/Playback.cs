@@ -30,6 +30,14 @@ public partial class Playback : Node
 	[Signal]
 	public delegate void PlaybackStateChangedEventHandler(PlaybackState state);
 
+	private DemoHandler _demoHandler;
+
+	public override void _Ready()
+	{
+		_demoHandler = GetNode<DemoHandler>("/root/DemoHandler");
+		_demoHandler.DemoLoaded += _on_demo_handler_demo_loaded;
+	}
+
 	public override void _Process(double delta)
 	{
 		UpdateTick(delta);
@@ -69,5 +77,10 @@ public partial class Playback : Node
 	private uint TimeToTick(double time)
 	{
 		return (uint)Mathf.Max(0, Mathf.RoundToInt(time * TickRate));
+	}
+
+	private void _on_demo_handler_demo_loaded(string demoName)
+	{
+		SetState(PlaybackState.Paused);
 	}
 }

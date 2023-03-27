@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6soxyfamg45y"]
+
+[ext_resource type="Script" path="res://assets/player_model/PlayerModel.cs" id="1_2chtf"]
+
+[node name="PlayerModel" type="Node3D"]
+script = ExtResource("1_2chtf")
+
+[node name="Agent" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+size = Vector3(1, 2, 1)
+
+[node name="Weapon" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.32, 0)
+
+[node name="GunModel" type="CSGBox3D" parent="Weapon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+size = Vector3(0.8, 0.214, 0.2)

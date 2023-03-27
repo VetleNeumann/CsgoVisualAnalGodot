@@ -1,13 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq15oxvixxyhv"]
+[gd_scene load_steps=6 format=3 uid="uid://dq15oxvixxyhv"]
 
 [ext_resource type="Script" path="res://assets/scripts/Main.cs" id="1_e3of3"]
 [ext_resource type="PackedScene" uid="uid://dih16pxth6t08" path="res://assets/demo_playback/demo_playback.tscn" id="2_c7x30"]
+[ext_resource type="Script" path="res://assets/scripts/PlayerVisualizer.cs" id="2_dd4uy"]
+[ext_resource type="Script" path="res://assets/scripts/Camera.cs" id="3_bg0ol"]
 [ext_resource type="PackedScene" uid="uid://bys7s5qmxy763" path="res://assets/demo_browser/demo_browser.tscn" id="3_h0tin"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_e3of3")
 
 [node name="World" type="Node3D" parent="."]
+
+[node name="PlayerVisualizer" type="Node3D" parent="World"]
+script = ExtResource("2_dd4uy")
+
+[node name="Camera3D" type="Camera3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2400, 812, 472)
+current = true
+script = ExtResource("3_bg0ol")
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
